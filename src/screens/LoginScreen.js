@@ -1,29 +1,30 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native'
-import { TextInput } from 'react-native-paper'
+import { TextInput} from 'react-native-paper'
+
 import AuthForm from '../components/AuthForm'
-import CustomButtom from '../components/CustomButtom'
+import CustomButton from '../components/CustomButton'
 import Colors from '../utils/Colors'
 
 const LoginScreen = ({ navigation }) => {
-    const [hidePass,setHidePass]=useState(true);
+    const [hidePass, setHidePass] = useState(true);
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Welcome to chat app</Text>
+            <Text style={styles.title}>WELCOME TO APP CHAT</Text>
             <View >
                 <AuthForm
-                    label='Your Email'
+                    label='Email'
                     icon='email'
                 />
 
                 <AuthForm
-                    label='Your Password'
+                    label='Password'
                     secureTextEntry={true}
                     icon='lock'
                     right={
-                        <TextInput.Icon 
-                            onPress={()=>setHidePass(!hidePass)}
-                            name={hidePass?'eye-off':'eye'}
+                        <TextInput.Icon
+                            onPress={() => setHidePass(!hidePass)}
+                            name={hidePass ? 'eye-off' : 'eye'}
                             size={24}
                             color={Colors.purple}
                         />
@@ -32,21 +33,14 @@ const LoginScreen = ({ navigation }) => {
                 />
 
             </View>
-            <CustomButtom
-                name='LOGIN'
+            <CustomButton
+                name='Sign in'
                 navigation={navigation}
-                screen='Home'
+                screen='AddRoom'
             />
             <View>
-                <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
-                    <Text style={{
-                        color: 'purple',
-                        textAlign: 'center',
-                        fontSize: 20,
-                        marginTop: 20,
-                    }}>
-                        New user? Join here
-                        </Text>
+                <TouchableOpacity onPress={()=>navigation.navigate('Signup')}>
+                    <Text style={styles.reset}>New user? Join here</Text>
                 </TouchableOpacity>
             </View>
 
@@ -59,7 +53,7 @@ export default LoginScreen
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 100,
+        marginTop: 50,
     },
 
     title: {
@@ -68,5 +62,14 @@ const styles = StyleSheet.create({
         fontSize: 30,
         marginTop: 100,
         marginBottom: 30,
+        color:Colors.purple
     },
+    reset:{
+        fontSize:20,
+        color:Colors.purple,
+        textAlign:'center',
+        marginTop:20,
+        fontWeight:'bold',
+        paddingRight:40,
+    }
 })

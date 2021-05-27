@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Colors from '../utils/Colors'
 
 export default function Header({ title, iconName, navigation, screen }) {
     return (
@@ -22,7 +23,6 @@ const styles = StyleSheet.create({
     header: {
         justifyContent: 'space-between',
         flexDirection: 'row',
-        backgroundColor: '#7500f7',
-
+        backgroundColor: Colors.purple,
     }
 })
