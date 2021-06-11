@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native'
 import { TextInput} from 'react-native-paper'
 
-import AuthForm from '../components/AuthForm'
+import FormInput from '../components/FormInput'
 import CustomButton from '../components/CustomButton'
 import Colors from '../utils/Colors'
 
@@ -12,12 +12,12 @@ const LoginScreen = ({ navigation }) => {
         <View style={styles.container}>
             <Text style={styles.title}>WELCOME TO APP CHAT</Text>
             <View >
-                <AuthForm
+                <FormInput
                     label='Email'
                     icon='email'
                 />
 
-                <AuthForm
+                <FormInput
                     label='Password'
                     secureTextEntry={true}
                     icon='lock'
