@@ -1,8 +1,17 @@
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View, Dimensions } from 'react-native'
 import { TextInput } from 'react-native-paper'
 import Colors from '../utils/Colors'
-const AuthForm = ({ secureTextEntry, label, icon, right,...custom }) => {
+export default function FormInput({
+    value,
+    secureTextEntry,
+    onChangeText,
+    label,
+    icon,
+    right,
+    ...res }) {
+        
+        const {width,height}=Dimensions.get('screen')
     return (
         <View>
             <TextInput
@@ -19,18 +28,17 @@ const AuthForm = ({ secureTextEntry, label, icon, right,...custom }) => {
                     />
                 }
                 right={right}
-                {...custom}
+                onChangeText={onChangeText}
+                value={value}
+                {...res}
             />
-
         </View>
     )
 }
 
-export default AuthForm
-
 const styles = StyleSheet.create({
     textInput: {
-        backgroundColor:'#ffffff',
+        backgroundColor: '#ffffff',
         marginBottom: 30,
         marginLeft: 50,
         marginRight: 50,

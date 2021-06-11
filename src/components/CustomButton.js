@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, View, TouchableOpacity, Text } from 'react-native'
 import Colors from '../utils/Colors'
 
-import {Button} from 'react-native-paper';
+
 
 export default function CustomButton({ name, navigation, screen,modeValue,...res }) {
     return (

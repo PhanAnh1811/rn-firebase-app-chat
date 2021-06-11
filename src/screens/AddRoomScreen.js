@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, } from 'react-native';
 
-import AuthForm from '../components/AuthForm';
+import FormInput from '../components/FormInput';
 import CustomButtom from '../components/CustomButton';
 
 import useStatusBar from '../utils/useStatusBar'
@@ -46,7 +46,7 @@ export default function AddRoomScreen({ navigation }) {
             </View>
             <Text style={styles.header}>CREATE A NEW ROOM CHAT</Text>
             <View>
-                <AuthForm
+                <FormInput
                     label='Room name'
                     value={roomName}
                     onChangeText={(text)=>setRoomName(text)}

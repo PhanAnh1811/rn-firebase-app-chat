@@ -6,7 +6,7 @@ import { TextInput } from 'react-native-paper'
 import FontAweSome from 'react-native-vector-icons/FontAwesome'
 
 //components
-import AuthForm from '../components/AuthForm'
+import FormInput from '../components/FormInput'
 import CustomButton from '../components/CustomButton'
 import Colors from '../utils/Colors'
 const SignupScreen = ({ navigation }) => {
@@ -15,11 +15,11 @@ const SignupScreen = ({ navigation }) => {
         <View style={styles.container}>
             <Text style={styles.title}>REGISTER APP CHAT</Text>
             <View>
-                <AuthForm
+                <FormInput
                     label='Email'
                     icon='email'
                 />
-                <AuthForm
+                <FormInput
                     label='Password'
                     icon='lock'
                     right={
